@@ -62,13 +62,12 @@ try:
         elif res == 3:
             fim = False
             while not fim:
-                mycursor = conexao.cursor()
                 id_procura = int(input("\nDigite o id: "))
                 if id_procura>714:
                     print("Existem 714 pessoas no banco de dados. Digite um id entre 1-714.")
                 encontrar = f"SELECT * FROM pessoas WHERE id ={id_procura}"
-                mycursor.execute(encontrar)
-                myresult = mycursor.fetchall()
+                cursor.execute(encontrar)
+                myresult = cursor.fetchall()
                 for (id, sobrevivente, nome, sexo, idade) in myresult:
                     print(f"\nA pessoa correspondente ao id {id} é:")
                     print(f"{nome} de {idade} anos" )
