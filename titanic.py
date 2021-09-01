@@ -15,7 +15,7 @@ try:
     while continuar: 
         print("\n----------------------------------------------------")
         print("------------------------MENU------------------------")
-        print("1 - Colocar os nomes de passageiros do titanic no MySQL")
+        print("1 - Inserir os passageiros do titanic no MySQL")
         print("2 - Resetar o banco de dados")
         print("3 - Encontrar alguém por seu id")
         print("----------------------------------------------------")
@@ -48,6 +48,9 @@ try:
                             
                             cursor.execute(survived)
                             conexao.commit()
+
+            print("Dados adicionados com sucesso.")
+
         elif res == 2:
             apagar1 = "DELETE FROM pessoas WHERE id<10000"
             apagar2 = "DELETE FROM sobreviventes WHERE id<10000"
@@ -59,6 +62,9 @@ try:
             cursor.execute(reset1)
             cursor.execute(reset2)
             conexao.commit()
+
+            print("Dados excluídos com sucesso.")
+            
         elif res == 3:
             fim = False
             while not fim:
